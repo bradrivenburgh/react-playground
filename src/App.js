@@ -2,6 +2,7 @@ import React from 'react';
 import Split from './composition/Split';
 import './App.css';
 import Tooltip from './composition/Tooltip';
+import Messages from './Messages';
 
 // make 2 tooltips here and another inside the App directly
 const firstTooltip = (
@@ -25,6 +26,8 @@ function App() {
         <Tooltip message='one more tooltip message'>
           Necessitatibus?
         </Tooltip>
+        <Messages name="Messages" unread={0}/>
+        <Messages name="Notifications" unread={10}/>
       </Split>
       <Split className='right'>
         This is the content for the right Split. Inventore aliquid cupiditate suscipit repellat. Quaerat quis {secondTooltip} quam fuga. Aliquid quo possimus id soluta aspernatur.
