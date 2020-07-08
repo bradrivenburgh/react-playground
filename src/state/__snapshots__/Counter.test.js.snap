@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter component renders the UI as expected 1`] = `
+<div>
+  <p>
+    The current count: 
+    0
+  </p>
+  <button>
+    Add 1
+  </button>
+</div>
+`;
