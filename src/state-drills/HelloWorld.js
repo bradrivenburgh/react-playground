@@ -8,13 +8,18 @@ export default class extends React.Component {
         }
     }
 
+    handleWhoChange = (event) => {
+        const newWho = event.target.value;
+        this.setState({ who: newWho });
+    }
+
     render() {
         return (
             <div>
-                <p>Hello, world</p>
-                <button id="world">World</button>
-                <button id="friend">Friend</button>
-                <button id="react">React</button>
+                <p>Hello, {this.state.who}</p>
+                <button value="world" onClick={this.handleWhoChange}>world</button>
+                <button value="friend" onClick={this.handleWhoChange}>friend</button>
+                <button value="react" onClick={this.handleWhoChange}>react</button>
             </div>
 
         );
