@@ -22,36 +22,35 @@ export default class RouletteGun extends React.Component {
         return Math.ceil(Math.random() * 8);
     }
 
+    renderResults = () => {
+        if (this.state.spinningTheChamber) {
+            this.setState({message: 'spinning the chamber and pulling the trigger! ...'})
+        }
+        if ((!this.state.spinningTheChamber) && (this.state.chamber === this.props.bulletInChamber)) {
+            this.setState({message: 'BANG!!!!'});
+        } 
+        if ((!this.state.spinningTheChamber) && (this.state.chamber !== this.props.bulletInChamber)) {
+            console.log('chamber ' + this.state.chamber, 'bullet '+ this.props.bulletInChamber);
+            this.setState({message: 'you are safe'});
+        }
+    }
+
     handleTimeout = () => {
         let count = 0;
         this.timeout = setInterval(() => {
             count++;
             this.setState({chamber: this.generateRandomNumber()});
-            if (count >= 2) {
+            if (count === 2) {
                 this.setState({spinningTheChamber: false});
+                clearInterval(this.timeout);
             }
             this.renderResults();
         }, 1000)
     }
 
-    renderResults = () => {
-        if (this.state.spinningTheChamber) {
-            this.setState({message: 'spinning the chamber and pulling the trigger! ...'})
-        }
-        if (this.state.chamber === this.state.bulletInChamber) {
-            this.setState({message: 'BANG!!!!'});
-        } else {
-            this.setState({message: 'you are safe'})
-        }
-    }
-
     handleTriggerPull = (e) => {
         this.handleSpinningChamber();
         this.handleTimeout();
-    }
-
-    componentDidMount() {
-        
     }
 
     componentWillUnmount() {
