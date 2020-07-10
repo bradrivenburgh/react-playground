@@ -6,7 +6,7 @@ export default class Accordion extends React.Component {
     };
     
     state = {
-        currentSectionIndex: 0
+        currentSectionIndex: null
     };
 
     handleButtonClick = (index) => {
