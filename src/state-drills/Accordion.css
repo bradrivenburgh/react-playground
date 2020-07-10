@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 2px;
+}
+
+li button {
+    background: lightgrey;
+    border: 1px solid #222;
+    padding: 10px 20px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+li p {
+    background: #fdfcfc;
+    border: 1px solid #777;
+    border-top: none;
+    margin: 0;
+    padding: 20px 10px;
+}
