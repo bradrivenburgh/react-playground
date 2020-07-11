@@ -10,6 +10,8 @@ import Bomb from './state-drills/Bomb';
 import RouletteGun from './state-drills/RouletteGun';
 import Tabs from './state/Tabs';
 import Accordion from './state-drills/Accordion';
+import ShopApp from './shopping-list/ShopApp';
+
 
 // make 2 tooltips here and another inside the App directly
 const firstTooltip = (
@@ -70,6 +72,7 @@ function App() {
       <HelloWorld />
       <Bomb />
       <Accordion sections={sectionsProp} />
+      <ShopApp />
       </Split>
     </main>
   )
